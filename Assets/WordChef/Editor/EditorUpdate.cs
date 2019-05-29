@@ -2,7 +2,7 @@
 using UnityEditor;
 using UnityEngine;
 
-[InitializeOnLoad]
+//[InitializeOnLoad]
 class EditorUpdate
 {
     static EditorUpdate()
