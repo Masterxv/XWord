@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using UnityEngine.UI;
-
+using RTLTMPro;
 public class ExtraWord : MonoBehaviour {
     public List<string> extraWords = new List<string>();
     public GameObject existMessage;
@@ -13,7 +13,7 @@ public class ExtraWord : MonoBehaviour {
     private int world, subWorld, level;
     private CanvasGroup existMessageCG;
     private bool isMessageShowing;
-    private Text flyText;
+    private RTLTextMeshPro flyText;
     
     public static ExtraWord instance;
 

@@ -4,6 +4,7 @@ using UnityEngine;
 using System.Linq;
 using UnityEngine.UI;
 using System.Text;
+using RTLTMPro;
 
 public class Pan : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class Pan : MonoBehaviour
     private const float RADIUS = 100;
     private List<Vector3> letterPositions = new List<Vector3>();
     private List<Vector3> letterLocalPositions = new List<Vector3>();
-    private List<Text> letterTexts = new List<Text>();
+    private List<RTLTextMeshPro> letterTexts = new List<RTLTextMeshPro>();
     private List<int> indexes = new List<int>();
 
     private int world, subWorld, level;
@@ -58,9 +59,9 @@ public class Pan : MonoBehaviour
 
         LineDrawer.instance.letterPositions = letterPositions;
 
-        for(int i = 0; i < numLetters; i++)
+        for (int i = 0; i < numLetters; i++)
         {
-            Text letter = Instantiate(MonoUtils.instance.letter);
+            RTLTextMeshPro letter = Instantiate(MonoUtils.instance.letter);
             letter.transform.SetParent(centerPoint);
             letter.transform.localScale = Vector3.one;
             letter.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, Random.Range(-10, 10)));
@@ -79,7 +80,7 @@ public class Pan : MonoBehaviour
 
         GetPanWord();
 
-        Timer.Schedule(this, 0, () => 
+        Timer.Schedule(this, 0, () =>
         {
             for (int i = 0; i < numLetters; i++)
             {
@@ -117,7 +118,7 @@ public class Pan : MonoBehaviour
         Prefs.SetPanWordIndexes(world, subWorld, level, indexes.ToArray());
 
         int i = 0;
-        foreach(var text in letterTexts)
+        foreach (var text in letterTexts)
         {
             iTween.MoveTo(text.gameObject, iTween.Hash("position", letterLocalPositions[indexes.IndexOf(i)], "time", 0.15f, "isLocal", true));
             text.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, Random.Range(-10, 10)));
