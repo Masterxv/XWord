@@ -1,11 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using RTLTMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Cell : MonoBehaviour
 {
-    public Text letterText;
+    public RTLTextMeshPro letterText;
     public string letter;
     public bool isShown;
 
