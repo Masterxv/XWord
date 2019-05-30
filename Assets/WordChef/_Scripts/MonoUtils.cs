@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-
+using RTLTMPro;
 public class MonoUtils : MonoBehaviour {
-    public Text letter;
+    public RTLTextMeshPro letter;
     public Cell cell;
     public LineWord lineWord;
     public Transform textFlyTransform;

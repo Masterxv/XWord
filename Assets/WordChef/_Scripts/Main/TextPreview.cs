@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Text;
+using RTLTMPro;
 
 public class TextPreview : MonoBehaviour {
     public GameObject content;
     public RectTransform backgroundRT, textRT;
     public string word;
-    public Text text;
+    public RTLTextMeshPro text;
 
     [Header("")]
     public Color answerColor;
@@ -32,7 +33,7 @@ public class TextPreview : MonoBehaviour {
             sb.Append(word[i]);
         }
         text.text = sb.ToString();
-        backgroundRT.sizeDelta = new Vector2(textRT.GetComponent<Text>().preferredWidth + 50, backgroundRT.sizeDelta.y);
+        backgroundRT.sizeDelta = new Vector2(textRT.GetComponent<RTLTextMeshPro>().preferredWidth + 50, backgroundRT.sizeDelta.y);
     }
 
     public void SetActive(bool isActive)

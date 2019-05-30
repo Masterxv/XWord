@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using RTLTMPro;
 
-public class LevelButton : MonoBehaviour {
+public class LevelButton : MonoBehaviour
+{
     public Text levelText;
     public int world, subWorld, level;
     public Transform centerPoint;
@@ -13,7 +15,7 @@ public class LevelButton : MonoBehaviour {
     public Sprite solvedSprite, currentSprite, lockedSprite;
 
     private List<Vector3> letterLocalPositions = new List<Vector3>();
-    private List<Text> letterTexts = new List<Text>();
+    private List<RTLTextMeshPro> letterTexts = new List<RTLTextMeshPro>();
     private GameLevel gameLevel;
     private const float RADIUS = 40f;
 
@@ -36,8 +38,8 @@ public class LevelButton : MonoBehaviour {
         int unlockedSubWorld = Prefs.unlockedSubWorld;
         int unlockedLevel = Prefs.unlockedLevel;
 
-        if  (world < unlockedWorld || 
-            (world == unlockedWorld && subWorld < unlockedSubWorld) || 
+        if (world < unlockedWorld ||
+            (world == unlockedWorld && subWorld < unlockedSubWorld) ||
             (world == unlockedWorld && subWorld <= unlockedSubWorld && level < unlockedLevel))
         {
             background.sprite = solvedSprite;
@@ -75,7 +77,7 @@ public class LevelButton : MonoBehaviour {
 
         for (int i = 0; i < numLetters; i++)
         {
-            Text letter = Instantiate(MonoUtils.instance.letter);
+            RTLTextMeshPro letter = Instantiate(MonoUtils.instance.letter);
             letter.transform.SetParent(centerPoint);
             letter.transform.localScale = Vector3.one;
             letter.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, Random.Range(-15, 15)));

@@ -11,7 +11,7 @@ using UnityEngine;
 using UnityEditor;
 using System.IO;
 
-[InitializeOnLoad]
+//[InitializeOnLoad]
 public class IAPChecker : EditorWindow 
 {
 	private const string IAP = "IAP";
