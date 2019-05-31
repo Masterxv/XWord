@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Text;
 using RTLTMPro;
+using System.Text;
 
 public class TextPreview : MonoBehaviour {
     public GameObject content;
@@ -53,7 +54,7 @@ public class TextPreview : MonoBehaviour {
 
     public string GetText()
     {
-        return text.text;
+        return text.originalText;
     }
 
     public void SetAnswerColor()

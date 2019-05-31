@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using TMPro;
 using UnityEngine;
 
 public class LineWord : MonoBehaviour {
@@ -19,8 +21,10 @@ public class LineWord : MonoBehaviour {
 
         for(int i = 0; i < numLetters; i++)
         {
+            string reversedAnswer = answer.Reverse().ToArray().ArrayToString();
             Cell cell = Instantiate(MonoUtils.instance.cell);
-            cell.letter = answer[i].ToString();
+            
+            cell.letter = reversedAnswer[i].ToString();
             cell.letterText.transform.localScale = Vector3.one * (cellSize / 80f);
             cell.letterText.fontSize = ConfigController.Config.fontSizeInCellMainScene;
 

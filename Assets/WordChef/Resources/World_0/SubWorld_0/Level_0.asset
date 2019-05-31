@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88afd11c802cdf6449faf33ed6e4e3bd, type: 3}
   m_Name: Level_0
   m_EditorClassIdentifier: 
-  word: "\uFE8F\uFEA9\uFE8D"
-  answers: "\uFE8F\uFE8D|\uFE8F\uFEA9\uFE8D|"
-  validWords: 
+  _word: "\u0627\u062F\u0628"
+  _answers: "\uFE8F\uFEA9\uFE8D|\uFEA9\uFE8E\uFE91|"
+  _validWords: 

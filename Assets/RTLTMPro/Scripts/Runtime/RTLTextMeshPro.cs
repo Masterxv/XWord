@@ -88,7 +88,7 @@ namespace RTLTMPro
 
         [SerializeField]
         [TextArea(3, 10)]
-        protected string originalText;
+        public string originalText;
 
         [SerializeField]
         protected bool fixTags = true;
